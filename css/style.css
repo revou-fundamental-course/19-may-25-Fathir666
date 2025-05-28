@@ -1,9 +1,11 @@
+/* Reset margin dan padding seluruh elemen */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Gaya umum untuk body */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #bb4088, #f879d6);
@@ -11,29 +13,28 @@ body {
   padding: 20px;
 }
 
+/* Gaya container utama */
 .container {
   max-width: 700px;
   margin: 30px auto;
   padding: 30px;
   border-radius: 16px;
-
-  background: 
-    rgba(255, 255, 255, 0.15)
-    url('images/temperature.png') no-repeat;
-  background-position: right 15px top 20px;  
+  background: rgba(255, 255, 255, 0.15) url('images/temperature.png') no-repeat;
+  background-position: right 15px top 20px;
   background-size: 60px;
-
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+/* Judul halaman */
 h1 {
   text-align: center;
   color: #2e192c;
   margin-bottom: 10px;
 }
 
+/* Paragraf umum */
 p {
   font-size: 15px;
   color: #2e192c;
@@ -41,6 +42,7 @@ p {
   text-align: center;
 }
 
+/* Label input */
 label {
   display: block;
   margin-top: 15px;
@@ -48,6 +50,7 @@ label {
   color: #333;
 }
 
+/* Input field suhu */
 input[type="number"] {
   width: 100%;
   padding: 12px 15px;
@@ -61,6 +64,7 @@ input[type="number"] {
   transition: all 0.3s ease;
 }
 
+/* Efek saat input difokuskan */
 input[type="number"]:focus {
   border-color: #4a90e2;
   box-shadow: 0 0 8px rgba(74, 144, 226, 0.4);
@@ -69,7 +73,7 @@ input[type="number"]:focus {
   transform: scale(1.02);
 }
 
-
+/* Grup tombol konversi dan reset */
 .button-group {
   display: flex;
   justify-content: space-between;
@@ -77,6 +81,7 @@ input[type="number"]:focus {
   margin-top: 10px;
 }
 
+/* Gaya umum tombol */
 .button-group button {
   flex: 1;
   padding: 12px;
@@ -88,6 +93,7 @@ input[type="number"]:focus {
   color: #fff;
 }
 
+/* Tombol Convert */
 #btnConvert {
   background-color: #bc41a3;
 }
@@ -97,6 +103,7 @@ input[type="number"]:focus {
   transform: scale(1.05);
 }
 
+/* Tombol Reset */
 #btnReset {
   background-color: #da413f;
 }
@@ -106,6 +113,7 @@ input[type="number"]:focus {
   transform: scale(1.05);
 }
 
+/* Container hasil dan penjelasan */
 .result,
 .how-it-works {
   margin-top: 25px;
@@ -116,7 +124,7 @@ input[type="number"]:focus {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-
+/* Animasi muncul */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -128,6 +136,7 @@ input[type="number"]:focus {
   }
 }
 
+/* Gaya penjelasan formula */
 #explanation {
   font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
@@ -135,20 +144,18 @@ input[type="number"]:focus {
   padding: 10px;
   border-radius: 6px;
   border: 1px dashed #f5c518;
+  color: #444;
+  line-height: 1.6;
 }
 
+/* Judul dalam result dan penjelasan */
 .result h3,
 .how-it-works h3 {
   color: #333;
   margin-bottom: 10px;
 }
 
-#outputResult,
-#explanation {
-  color: #444;
-  line-height: 1.6;
-}
-
+/* Responsif untuk layar kecil */
 @media (max-width: 600px) {
   .how-it-works {
     padding: 16px;
@@ -180,9 +187,11 @@ input[type="number"]:focus {
   }
 }
 
+/* Footer styling */
 footer {
   text-align: center;
   margin-top: 30px;
   font-size: 14px;
   color: #613162;
 }
+

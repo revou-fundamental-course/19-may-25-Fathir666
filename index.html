@@ -5,10 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Fathir Arya" />
   <title>Convert Celsius to Fahrenheit</title>
+
+  <!-- Favicon untuk ikon di tab browser -->
   <link rel="icon" href="images/temperature-sensor.png" type="image/png" />
+
+  <!-- Link ke file CSS eksternal -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Polyfill agar mendukung fitur ES6 di browser lama -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async
+
+  <!-- Load MathJax untuk menampilkan rumus matematika -->
+  <script id="MathJax-script" async 
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
 </head>
@@ -17,40 +25,42 @@
     <h1>Celsius to Fahrenheit Converter</h1>
     <p>Convert temperature from Celsius to Fahrenheit.</p>
     <p>Enter the temperature in Celsius and click the "Convert" button.</p>
-      
+
+    <!-- Form input suhu -->
     <form id="formConversion" onsubmit="return false;">
       <label for="inputTemperature">Enter Temperature (°C):</label>
       <input type="number" id="inputTemperature" placeholder="Enter temperature in °C" required />
-      
-      <div class="button-group" style="margin-top: 15px;">
-        <!-- PENTING: type="button" agar tidak reload halaman -->
+
+      <!-- Tombol konversi dan reset -->
+      <div class="button-group">
         <button id="btnConvert" type="button">Convert</button>
         <button id="btnReset" type="reset">Reset</button>
       </div>
     </form>
-    
+
+    <!-- Hasil konversi ditampilkan di sini -->
     <div class="result">
       <h3>Result:</h3>
       <p id="outputResult"></p>
     </div>
 
+    <!-- Penjelasan bagaimana konversi dilakukan -->
     <div class="how-it-works">
       <h3>How it Works:</h3>
-      <p id="explanation">
-  Using the formula: \( T_{(°F)} = (T_{(°C)} \times \frac{9}{5}) + 32 \)
-</p>
-
+      <p id="explanation">\( T_{(°F)} = (T_{(°C)} \times \frac{9}{5}) + 32 \)</p>
     </div>
 
-    <footer style="text-align: center; margin-top: 30px; font-size: 14px; color: #666;">
+    <!-- Footer -->
+    <footer>
       &copy; 2025 Fathir Arya
     </footer>
   </div>
 
-  <!-- Pastikan script ini ada di paling bawah sebelum </body> -->
+  <!-- File JavaScript eksternal -->
   <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
 
