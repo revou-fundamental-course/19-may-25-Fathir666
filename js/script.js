@@ -27,12 +27,17 @@ document.addEventListener("DOMContentLoaded", function () {
     outputResult.textContent = `${celsius.toFixed(2)}°C = ${fahrenheit.toFixed(2)}°F`;
 
     explanation.innerHTML = `
-      \\[
-        T_{(°F)} = T_{(°C)} \\times \\frac{9}{5} + 32 \\\\
-        = ${celsius} \\times \\frac{9}{5} + 32 \\\\
-        = ${fahrenheit.toFixed(2)}
-      \\]
-    `;
+  <p>
+    Using the temperature conversion formula:
+    \\( T_{(°F)} = (T_{(°C)} \\times \\frac{9}{5}) + 32 \\),
+    we substitute the Celsius value into the formula:
+  </p>
+  <p>
+    \\[
+      T_{(°F)} = ${celsius} \\times \\frac{9}{5} + 32 = ${fahrenheit.toFixed(2)}
+    \\]
+  </p>
+`;
 
     if (window.MathJax) {
       MathJax.typesetPromise([explanation]).catch(function (err) {
