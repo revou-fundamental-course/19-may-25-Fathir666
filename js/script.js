@@ -23,18 +23,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const fahrenheit = (celsius * 9 / 5) + 32;
-
+    const decimalFactor = (9 / 5).toFixed(2);
+    const step1 = (celsius * (9 / 5)).toFixed(2);
+    
     outputResult.textContent = `${celsius.toFixed(2)}°C = ${fahrenheit.toFixed(2)}°F`;
 
     explanation.innerHTML = `
   <p>
-    Using the temperature conversion formula:
-    \\( T_{(°F)} = (T_{(°C)} \\times \\frac{9}{5}) + 32 \\),
-    we substitute the Celsius value into the formula:
+    <strong>Method 1 (Using Fraction 9/5):</strong><br />
+    Using the formula: 
+    \\( T_{(°F)} = T_{(°C)} \\times \\frac{9}{5} + 32 \\)
   </p>
   <p>
     \\[
-      T_{(°F)} = ${celsius} \\times \\frac{9}{5} + 32 = ${fahrenheit.toFixed(2)}
+      T_{(°F)} = ${celsius} \\times \\frac{9}{5} + 32 = ${step1} + 32 = ${fahrenheit.toFixed(2)}
+    \\]
+  </p>
+
+  <p>
+    <strong>Method 2 (Using Decimal Factor):</strong><br />
+    Since \\( \\frac{9}{5} = ${decimalFactor} \\), we use:
+  </p>
+  <p>
+    \\[
+      T_{(°F)} = ${celsius} \\times ${decimalFactor} + 32 = ${step1} + 32 = ${fahrenheit.toFixed(2)}
     \\]
   </p>
 `;

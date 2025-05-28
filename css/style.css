@@ -116,6 +116,7 @@ input[type="number"]:focus {
   animation: fadeIn 0.5s ease-in-out;
 }
 
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -136,7 +137,6 @@ input[type="number"]:focus {
   border: 1px dashed #f5c518;
 }
 
-
 .result h3,
 .how-it-works h3 {
   color: #333;
@@ -147,6 +147,37 @@ input[type="number"]:focus {
 #explanation {
   color: #444;
   line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .how-it-works {
+    padding: 16px;
+    font-size: 14px;
+  }
+
+  #explanation {
+    font-size: 14px;
+    overflow-x: auto;
+    word-wrap: break-word;
+  }
+
+  #explanation p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .container {
+    padding: 20px;
+    margin: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  p, label {
+    font-size: 14px;
+  }
 }
 
 footer {
