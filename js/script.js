@@ -1,33 +1,55 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const Tombol = document.getElementById("btnKonversi");
+document.addEventListener("DOMContentLoaded", function () {
+  const convertButton = document.getElementById("btnConvert");
+  const resetButton = document.getElementById("btnReset");
+  const inputTemperature = document.getElementById("inputTemperature");
+  const outputResult = document.getElementById("outputResult");
+  const explanation = document.getElementById("explanation");
 
-Tombol.addEventListener("click", function() {
-  const suhuInput = document.getElementById("inputSuhu").value;
-  const pilihan = document.getElementById("konversiKe").value;
-  const hasilOutput = document.getElementById("outputHasil");
-  const penjelasan = document.getElementById("penjelasan");
+  convertButton.addEventListener("click", function () {
+    const input = inputTemperature.value.trim();
 
-  if (suhuInput === "") {
-    hasilOutput.textContent = "Silakan masukkan suhu terlebih dahulu.";
-    penjelasan.textContent = "";
-    return;
-  }
+    if (input === "") {
+      alert("Please enter a temperature in Celsius.");
+      outputResult.textContent = "Please enter a temperature first.";
+      explanation.textContent = "";
+      return;
+    }
 
-  const suhu = parseFloat(suhuInput);
-  let hasil = 0;
-  let cara = "";
+    const celsius = parseFloat(input);
+    if (isNaN(celsius)) {
+      outputResult.textContent = "Please enter a valid number.";
+      explanation.textContent = "";
+      return;
+    }
 
-  if (pilihan === "celcius") {
-    hasil = (suhu - 32) * 5 / 9;
-    cara = `(${suhu}°F - 32) × 5/9 = ${hasil.toFixed(2)}°C`;
-    hasilOutput.textContent = `${hasil.toFixed(2)}°C`;
-  } else if (pilihan === "fahrenheit") {
-    hasil = (suhu * 9 / 5) + 32;
-    cara = `(${suhu}°C × 9/5) + 32 = ${hasil.toFixed(2)}°F`;
-    hasilOutput.textContent = `${hasil.toFixed(2)}°F`;
-  }
+    const fahrenheit = (celsius * 9 / 5) + 32;
 
-  penjelasan.textContent = cara;
+    outputResult.textContent = `${celsius.toFixed(2)}°C = ${fahrenheit.toFixed(2)}°F`;
+
+    explanation.innerHTML = `
+      \\[
+        T_{(°F)} = T_{(°C)} \\times \\frac{9}{5} + 32 \\\\
+        = ${celsius} \\times \\frac{9}{5} + 32 \\\\
+        = ${fahrenheit.toFixed(2)}
+      \\]
+    `;
+
+    if (window.MathJax) {
+      MathJax.typesetPromise([explanation]).catch(function (err) {
+        console.error("MathJax typeset error:", err);
+      });
+    }
+  });
+
+  resetButton.addEventListener("click", function () {
+    inputTemperature.value = "";
+    outputResult.textContent = "";
+    explanation.innerHTML = `\\( T_{(°F)} = (T_{(°C)} \\times \\frac{9}{5}) + 32 \\)`;
+
+    if (window.MathJax) {
+      MathJax.typesetPromise([explanation]).catch(function (err) {
+        console.error("MathJax reset error:", err);
+      });
+    }
+  });
 });
-});
-

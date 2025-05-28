@@ -1,98 +1,124 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
-    background: linear-gradient(to right, #051422, #054586);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #bb4088, #f879d6);
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .container {
-  background-color: #ffffffcc;
-  backdrop-filter: blur(10px);
-  padding: 30px 25px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 400px;
-  animation: fadeIn 1s ease;
-}
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 16px;
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+  background: 
+    rgba(255, 255, 255, 0.15)
+    url('images/temperature.png') no-repeat;
+  background-position: right 15px top 20px;  
+  background-size: 60px;
 
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+  color: #2e192c;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 15px;
+  color: #2e192c;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 label {
-  margin-top: 15px;
   display: block;
-  font-weight: 500;
-  color: #444;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
 }
 
-input, select {
+input[type="number"] {
   width: 100%;
-  padding: 10px 12px;
+  padding: 10px;
   margin-top: 5px;
-  margin-bottom: 15px;
-  border: 2px solid #ddd;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 1rem;
-  transition: 0.3s ease;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
 }
 
-input:focus, select:focus {
-  border-color: #66a6ff;
-  outline: none;
-  background-color: #f8fbff;
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 10px;
 }
 
-button {
-  width: 100%;
-  background: #66a6ff;
-  color: white;
+.button-group button {
+  flex: 1;
   padding: 12px;
   font-weight: bold;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s, transform 0.2s;
+  color: #fff;
 }
 
-button:hover {
-  background: #558de8;
+#btnConvert {
+  background-color: #bc41a3;
 }
 
+#btnConvert:hover {
+  background-color: #953281;
+  transform: scale(1.05);
+}
 
-.hasil, .cara-kerja {
-  background-color: #f0f7ff;
+#btnReset {
+  background-color: #da413f;
+}
+
+#btnReset:hover {
+  background-color: #9d2f2d;
+  transform: scale(1.05);
+}
+
+.result,
+.how-it-works {
+  margin-top: 25px;
+  background-color: #f1f8e9;
   padding: 15px;
-  border-radius: 10px;
-  margin-top: 20px;
-  border-left: 5px solid #66a6ff;
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+  border-left: 5px solid #333;
+  border-radius: 8px;
 }
 
-.hasil h3, .cara-kerja h3 {
+.result h3,
+.how-it-works h3 {
   color: #333;
   margin-bottom: 10px;
 }
 
-#outputHasil, #penjelasan {
-  font-size: 1rem;
-  color: #222;
+#outputResult,
+#explanation {
+  color: #444;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #613162;
 }
